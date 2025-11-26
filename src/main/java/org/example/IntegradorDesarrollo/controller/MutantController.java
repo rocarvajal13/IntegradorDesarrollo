@@ -46,4 +46,10 @@ public class MutantController {
                 "timestamp", LocalDateTime.now()
         ));
     }
+    @GetMapping("/")
+    public ResponseEntity<Void> index() {
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .location(java.net.URI.create("/swagger-ui.html"))
+                .build();
+    }
 }
